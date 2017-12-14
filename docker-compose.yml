@@ -1,0 +1,49 @@
+version: "3"
+
+services:
+  web-dev:
+    image: node:6.11.2-alpine
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ".:/var/app"
+    ports:
+      - "3030:3600"
+    depends_on:
+      - redis-dev
+
+  # web-dev:
+  #   image: node:6.11.2-alpine
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   # depends_on:
+  #   #   - redis-dev
+  #   # environment:
+  #   #   - NODE_ENV=development
+  #   #   - PORT=3500
+  #   ports:
+  #     - 3500:3500
+  #   volumes:
+  #     - ".:/var/app"
+
+    #command: npm run start
+    
+  # mongodb-dev:
+  #   image: mongo:latest
+  #   ports:
+  #     - "27017:27017"
+  #   volumes:
+  #     - "./mongo_data:/data/db"
+
+  redis-dev:
+    #container_name: loa-dev-redis
+    image: redis:alpine
+    # build:
+    #   context: .
+    #   dockerfile: redis.dockerfile
+    ports:
+      - 6380:6379
+    # networks:
+    #   - loa-dev-network
