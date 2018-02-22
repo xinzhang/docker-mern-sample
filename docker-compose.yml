@@ -6,6 +6,9 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true #for react hot loading      
     volumes:
       - ".:/var/app"
     ports:
