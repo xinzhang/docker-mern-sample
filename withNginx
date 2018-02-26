@@ -1,0 +1,2 @@
+docker build -f Dockerfile.node -t sca/radio-web:1.0 .
+docker run -p 3000:3000 sca/radio-web:1.0 
