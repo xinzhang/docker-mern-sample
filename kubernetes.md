@@ -2,11 +2,13 @@
 
 gcloud container clusters get-credentials [CLUSTER_NAME]
 
-kubectl run hello-server --image gcr.io/google-samples/hello-app:1.0 --port 8080 
+kubectl run hello-devops --image gcr.io/google-samples/hello-app:1.0 --port 8080 
 
-kubectl expose deployment hello-server --type "LoadBalancer"
+kubectl expose deployment hello-devops --type "LoadBalancer"
 
-kubectl get service hello-server
+kubectl get service hello-devops
+
+kubectl port-forward hello-devops 80:3300
 
 ### Clean up
 kubectl delete service hello-server
