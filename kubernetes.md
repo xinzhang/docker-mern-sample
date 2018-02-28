@@ -8,6 +8,8 @@ kubectl expose deployment hello-devops --type "LoadBalancer"
 
 kubectl get service hello-devops
 
+kubectl get pod --selector="run=hello-devops" -o jsonpath='{.items[0].metadata.name}'
+
 kubectl port-forward hello-devops 80:3300
 
 ### Clean up
