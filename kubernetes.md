@@ -1,3 +1,6 @@
+### login
+gcloud auth activate-service-account --key-file='/var/app/serviceaccoutn-keys.json'
+
 ### Start the kuberntes in GCP
 
 gcloud container clusters get-credentials [CLUSTER_NAME]
