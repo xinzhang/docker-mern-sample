@@ -30,3 +30,11 @@ kubectl delete pod <pod-name>
  }
  
 
+#running in pipeline
+    - gcloud auth activate-service-account --key-file='da4ef993105c.json'
+    - gcloud container clusters get-credentials stan-kube --zone australia-southeast1-a --project test-triplem-baas
+    # - kubectl create secret docker-registry registry.gitlab.com --docker-server=https://registry.gitlab.com/v1/ --docker-username="$CI_REGISTRY_USER" --docker-password="$CI_REGISTRY_PASSWORD" --docker-email=xin.zhang@sca.com.au
+    - kubectl create -f devopsnetcoreapp-pod.yml
+    - kubectl get pod devopsnetcoreapp
+    #- kubectl run devopsnetcoreapp --image registry.gitlab.com/sca-developers/devopsnetcoreapp --port 5005
+    #- kubectl expose deployment devopsnetcoreapp --type "LoadBalancer"
