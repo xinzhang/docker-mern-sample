@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: devopsnetcoreapp
+spec:
+  containers:
+  - name: devopsnetcoreapp
+    image: registry.gitlab.com/sca-developers/devopsnetcoreapp
+  imagePullSecrets:
+  - name: registry.gitlab.com
