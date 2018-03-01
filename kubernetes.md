@@ -17,8 +17,12 @@ kubectl port-forward hello-devops 80:3300
 
 ### Clean up
 kubectl delete service hello-server
-
 gcloud container clusters delete [CLUSTER_NAME]
+
+kubectl get deployment
+kubectl delete deployment <deployment-name>
+
+kubectl delete pod <pod-name>
 
 ### Edit yaml file
  "spec": {
