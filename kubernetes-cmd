@@ -1,0 +1,18 @@
+### Pods
+
+kubectl get pod
+
+kubectl describe pod <pod>
+
+kubectl expose pod <pod> --port=444 --name=frontend
+
+kubectl port-forward <pod> 8080
+
+kubectl attach <podname> -i
+
+kubectl exec <pod> -- command
+
+kubectl label pods <pod> mylabel=awesome
+
+kubectl run -i -tty busybox --image=busybox --restart=Never -- sh
+
