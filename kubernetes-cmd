@@ -16,3 +16,5 @@ kubectl label pods <pod> mylabel=awesome
 
 kubectl run -i -tty busybox --image=busybox --restart=Never -- sh
 
+kubectl exec twocontainers -c shell -i -t -- bash
+
