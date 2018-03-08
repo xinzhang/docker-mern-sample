@@ -20,3 +20,8 @@ Windows Powershell
 @echo off
 FOR /f "tokens=*" %%i IN ('docker ps -aq') DO docker rm %%i
 FOR /f "tokens=*" %%i IN ('docker images --format "{{.ID}}"') DO docker rmi %%i
+
+### linux command
+ps aux
+tar -cvzf <file>.tar.gz /var/app/public (zip)
+tar -xzf <file>.tar.gz (unzip)
